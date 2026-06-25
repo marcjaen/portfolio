@@ -205,8 +205,11 @@ input[type=range].slider::-moz-range-thumb{
   padding:1rem 0;
   border-top:1px solid rgba(126,184,212,0.1);
   transition:border-color 0.2s;
+  text-decoration:none;
+  color:inherit;
 }
 .obra-fila:hover{border-top-color:rgba(126,184,212,0.3)}
+.obra-fila:hover .obra-tit{color:var(--acento)}
 
 .obra-tit{
   font-family:var(--courier);
@@ -321,17 +324,68 @@ footer{
 
     <div class="obras-seccion">
       <div class="obras-titulo">Ensayo</div>
-      <div class="placeholder-fila">Tus ensayos irán aquí</div>
+      <a class="obra-fila" href="https://letralia.com/sala-de-ensayo/2026/06/15/estupidez-natural-asistida/" target="_blank" rel="noopener">
+        <div>
+          <div class="obra-tit">Estupidez natural asistida</div>
+          <div class="obra-desc">Sobre la irrupción de la inteligencia artificial en la sociedad actual.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Letralia</div>
+          <div class="obra-year">Junio 2026</div>
+        </div>
+      </a>
     </div>
 
     <div class="obras-seccion">
       <div class="obras-titulo">Artículos</div>
-      <div class="placeholder-fila">Tus artículos irán aquí</div>
+      <a class="obra-fila" href="https://somgandia.com/author/mj" target="_blank" rel="noopener">
+        <div>
+          <div class="obra-tit">Cobertura de eventos locales</div>
+          <div class="obra-desc">Redactor en Som Gandia, cubriendo actualidad y eventos de la ciudad.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Som Gandia</div>
+          <div class="obra-year">2024—2026</div>
+        </div>
+      </a>
     </div>
 
     <div class="obras-seccion">
       <div class="obras-titulo">Guion</div>
-      <div class="placeholder-fila">Tus guiones irán aquí</div>
+      <div class="obra-fila">
+        <div>
+          <div class="obra-tit">Ruido</div>
+          <div class="obra-desc">Guionista y ayudante de iluminación en el micrometraje, presentado a un festival de micrometrajes sobre la paz.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Micrometraje</div>
+          <div class="obra-year">2025</div>
+        </div>
+      </div>
+      <div class="obra-fila">
+        <div>
+          <div class="obra-tit">El secuestrador secuestrado</div>
+          <div class="obra-desc">Guion y sonido en el cortometraje.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Cortometraje</div>
+          <div class="obra-year">2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="obras-seccion">
+      <div class="obras-titulo">Otros</div>
+      <div class="obra-fila">
+        <div>
+          <div class="obra-tit">Punto Ciego</div>
+          <div class="obra-desc">Ayudante de dirección del cortometraje, proyectado a principios de 2026.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Cortometraje</div>
+          <div class="obra-year">2026</div>
+        </div>
+      </div>
     </div>
 
   </div>
