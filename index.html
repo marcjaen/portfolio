@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marc Jaén</title>
+<title>Marc Jaén Domínguez</title>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -58,12 +58,12 @@ nav{
 }
 
 .hero-col{
-  flex:0 0 480px;
+  flex:0 0 520px;
   padding:3rem 3rem 4rem 4rem;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  gap:3rem;
+  gap:2.5rem;
 }
 
 .hero-nombre{
@@ -73,6 +73,35 @@ nav{
   line-height:0.88;
   color:var(--tinta);
   padding-top:0.5rem;
+}
+
+/* ── FOTO ── */
+.hero-foto{
+  width:100%;
+  max-width:340px;
+  aspect-ratio:4/5;
+  background:var(--fondo-alt);
+  border:1px solid var(--linea);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+.hero-foto img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.foto-placeholder{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(126,184,212,0.3);
+  text-align:center;
+  padding:1rem;
 }
 
 .hero-sobre{
@@ -124,7 +153,7 @@ input[type=range].slider::-moz-range-thumb{
 
 .obras-col{
   flex:1;
-  padding:3rem 4rem 4rem 3rem;
+  padding:3rem 4rem 4rem 4rem;
   border-left:1px solid var(--linea);
 }
 
@@ -241,6 +270,7 @@ footer{
     padding:1.5rem 1.5rem 2rem;
     gap:2rem;
   }
+  .hero-foto{max-width:100%}
   .obras-col{
     border-left:none;
     border-top:1px solid var(--linea);
@@ -265,6 +295,12 @@ footer{
 
   <div class="hero-col">
     <h1 class="hero-nombre">Marc<br>Jaén.</h1>
+
+    <!-- FOTO: sustituye foto.jpg por el nombre de tu imagen -->
+    <div class="hero-foto">
+      <img src="foto.jpg" alt="Marc Jaén" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="foto-placeholder" style="display:none">Tu foto aquí</div>
+    </div>
 
     <div class="hero-sobre">
       <div class="sec-label">Sobre mí</div>
