@@ -146,15 +146,6 @@ input[type=range].slider::-moz-range-thumb{
   width:13px;height:13px;
   background:var(--acento);border-radius:50%;cursor:pointer;border:none;
 }
-.tono-val{
-  font-family:var(--inter);
-  font-size:0.65rem;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--acento);
-  margin-top:0.75rem;
-  opacity:0.7;
-}
 
 .obras-col{
   flex:1;
@@ -326,7 +317,6 @@ footer{
       <div class="sobre-bio" id="bioTexto"></div>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
-      <div class="tono-val" id="tonoVal"></div>
     </div>
   </div>
 
@@ -423,16 +413,12 @@ const bios = [
   "Escribo cuentos, ensayo, reportajes y guiones. Llevo años intentando entender por qué algunas frases se quedan y otras no. Todavía no lo sé, pero sigo.",
   "Soy de los que creen que una frase bien construida puede cambiar cómo alguien entiende su vida, y llevo años poniéndolo a prueba. Cuentos que nacen de una imagen que no me abandona, reportajes que empiezan con una persona y acaban siendo sobre todos, ensayos que son una forma educada de discutir, guiones que intentan que la cámara haga lo que las palabras no pueden. Escribir es seguir haciendo preguntas."
 ];
-const vals = ["Minimalista","·","·","Por defecto","·","·","Maximalista"];
-
 const slider = document.getElementById('tonoSlider');
 const bio    = document.getElementById('bioTexto');
-const val    = document.getElementById('tonoVal');
 
 function update(v){
   bio.style.opacity='0';
   setTimeout(()=>{ bio.textContent=bios[v]; bio.style.opacity='1'; },180);
-  val.textContent = vals[v];
 }
 slider.addEventListener('input', e => update(parseInt(e.target.value)));
 update(3);
