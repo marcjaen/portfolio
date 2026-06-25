@@ -306,7 +306,7 @@ footer{
       <div class="sec-label">Sobre mí</div>
       <div class="sobre-bio" id="bioTexto"></div>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
-      <input type="range" class="slider" id="tonoSlider" min="0" max="4" step="1" value="2">
+      <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
       <div class="tono-val" id="tonoVal"></div>
     </div>
   </div>
@@ -345,12 +345,14 @@ footer{
 <script>
 const bios = [
   "Escribo.",
+  "Escritor. Escribo ficción y periodismo.",
   "Escritor. Trabajo entre la ficción y el periodismo.",
   "Escritor con un pie en el periodismo y otro en la ficción. No me quedo quieto en un género.",
+  "Escritor que se mueve entre la ficción y el periodismo sin pedir permiso. Cuentos, reportajes, ensayos: distintas formas de hacer la misma pregunta.",
   "Escribo cuentos, ensayo, reportajes y guiones. Llevo años intentando entender por qué algunas frases se quedan y otras no. Todavía no lo sé, pero sigo.",
   "Soy de los que creen que una frase bien construida puede cambiar cómo alguien entiende su vida, y llevo años poniéndolo a prueba. Cuentos que nacen de una imagen que no me abandona, reportajes que empiezan con una persona y acaban siendo sobre todos, ensayos que son una forma educada de discutir, guiones que intentan que la cámara haga lo que las palabras no pueden. Escribir es seguir haciendo preguntas."
 ];
-const vals = ["Minimalista","·","Por defecto","·","Maximalista"];
+const vals = ["Minimalista","Casi minimalista","·","Por defecto","·","Casi maximalista","Maximalista"];
 
 const slider = document.getElementById('tonoSlider');
 const bio    = document.getElementById('bioTexto');
@@ -362,7 +364,7 @@ function update(v){
   val.textContent = vals[v];
 }
 slider.addEventListener('input', e => update(parseInt(e.target.value)));
-update(2);
+update(3);
 </script>
 </body>
 </html>
