@@ -244,6 +244,16 @@ input[type=range].slider::-moz-range-thumb{
   font-style:italic;
 }
 
+/* Filas sin enlace (logros / cargos sin URL propia) */
+.obra-fila-static{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:0.75rem 2rem;
+  align-items:start;
+  padding:1rem 0;
+  border-top:1px solid rgba(126,184,212,0.1);
+}
+
 footer{
   padding:2rem 4rem;
   border-top:1px solid var(--linea);
@@ -284,7 +294,7 @@ footer{
     border-top:1px solid var(--linea);
     padding:2rem 1.5rem;
   }
-  .obra-fila{grid-template-columns:1fr;gap:0.4rem}
+  .obra-fila,.obra-fila-static{grid-template-columns:1fr;gap:0.4rem}
   .obra-der{text-align:left}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
 }
@@ -403,6 +413,36 @@ footer{
           <div class="obra-year">2026</div>
         </div>
       </a>
+      <div class="obra-fila-static">
+        <div>
+          <div class="obra-tit">Jurado de cortometrajes</div>
+          <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinemà Jove, festival internacional de cine de València.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">Cinemà Jove</div>
+          <div class="obra-year">2026</div>
+        </div>
+      </div>
+      <div class="obra-fila-static">
+        <div>
+          <div class="obra-tit">Coordinador del Biblioclub</div>
+          <div class="obra-desc">Coordinación del club de lectura de la Universitat Politècnica de València.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">UPV</div>
+          <div class="obra-year">2024—2026</div>
+        </div>
+      </div>
+      <div class="obra-fila-static">
+        <div>
+          <div class="obra-tit">Coordinador del Cineclub</div>
+          <div class="obra-desc">Coordinación del club de cine de la Universitat Politècnica de València.</div>
+        </div>
+        <div class="obra-der">
+          <div class="obra-pub">UPV</div>
+          <div class="obra-year">2024—2026</div>
+        </div>
+      </div>
     </div>
 
   </div>
