@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio personal de Marc Jaén Domínguez: ensayo, artículos, guion y otros proyectos.">
+<meta name="author" content="Marc Jaén Domínguez">
 <title>Marc Jaén Domínguez</title>
 <link rel="icon" type="image/png" href="logomarc.png">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -17,27 +19,28 @@
   --tinta:     #e8eef7;
   --sub:       #a8bfd4;
   --gris:      #7a9bb8;
-  --gris-dim:  rgba(122,155,184,0.45);
-  --linea:     rgba(126,184,212,0.15);
+  --gris-dim:  rgba(122,155,184,0.3);
+  --linea:     rgba(126,184,212,0.08);
   --courier:'Courier Prime','Courier New',monospace;
   --inter:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--fondo);color:var(--tinta);font-family:var(--courier);min-height:100vh;overflow-x:hidden}
 
+/* accesibilidad: oculta visualmente pero deja el texto para lectores de pantalla */
+.sr-only{
+  position:absolute;width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
 nav{
   position:fixed;top:0;left:0;right:0;
   padding:1rem 3rem;
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:flex-end;align-items:center;
   background:var(--fondo-nav);
   border-bottom:1px solid var(--linea);
   z-index:100;
-}
-.nav-nombre{
-  font-family:var(--courier);
-  font-size:1rem;
-  letter-spacing:0.06em;
-  color:var(--tinta);
 }
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{
@@ -55,14 +58,14 @@ nav{
 }
 .nav-links a:hover{color:var(--acento)}
 
-/* ── CONTENEDOR ÚNICO, TODO SEGUIDO ── */
+/* todo el contenido va en un único contenedor centrado */
 .contenido{
-  max-width:900px;
+  max-width:980px;
   margin:0 auto;
   padding:6.5rem 2.5rem 4rem;
 }
 
-/* ── GRID: NOMBRE CENTRADO SOBRE LA BIO, FOTO + BIO EN FILA ── */
+/* nombre arriba, foto y bio en fila debajo */
 .sobre-grid{
   display:grid;
   grid-template-columns:190px 1fr;
@@ -70,7 +73,7 @@ nav{
     ". header"
     "foto texto";
   column-gap:2.5rem;
-  row-gap:1.75rem;
+  row-gap:2.25rem;
   align-items:start;
   margin-bottom:4.5rem;
   scroll-margin-top:5rem;
@@ -81,17 +84,18 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:1.1rem;
+  gap:1.25rem;
+  padding-bottom:0.75rem;
 }
 .marc-logo{
-  height:clamp(2.3rem,5vw,3.4rem);
+  height:clamp(2.5rem,5.5vw,3.7rem);
   width:auto;
   display:block;
 }
 .marc-nombre{
   font-family:var(--courier);
   font-weight:700;
-  font-size:clamp(2.3rem,5vw,3.4rem);
+  font-size:clamp(2.5rem,5.5vw,3.7rem);
   line-height:1;
   color:var(--tinta);
 }
@@ -118,7 +122,7 @@ nav{
   font-size:0.6rem;
   letter-spacing:0.18em;
   text-transform:uppercase;
-  color:rgba(126,184,212,0.3);
+  color:rgba(126,184,212,0.25);
   text-align:center;
   padding:0.75rem;
 }
@@ -136,7 +140,7 @@ nav{
   color:var(--tinta);
   transition:opacity 0.2s;
   min-height:120px;
-  margin-bottom:1.5rem;
+  margin-bottom:2.2rem;
 }
 
 .tono-label-row{
@@ -151,7 +155,7 @@ nav{
 }
 input[type=range].slider{
   width:100%;appearance:none;height:1px;
-  background:rgba(126,184,212,0.25);
+  background:rgba(126,184,212,0.15);
   border-radius:0;outline:none;cursor:pointer;border:none;
 }
 input[type=range].slider::-webkit-slider-thumb{
@@ -163,7 +167,6 @@ input[type=range].slider::-moz-range-thumb{
   background:var(--acento);border-radius:50%;cursor:pointer;border:none;
 }
 
-/* ── PUBLICACIONES ── */
 .obras-sec{scroll-margin-top:5rem}
 
 .sec-label{
@@ -180,7 +183,7 @@ input[type=range].slider::-moz-range-thumb{
 .sec-label::after{
   content:'';
   height:1px;
-  background:rgba(240,214,140,0.2);
+  background:rgba(240,214,140,0.12);
   width:120px;
 }
 
@@ -239,6 +242,7 @@ input[type=range].slider::-moz-range-thumb{
 }
 .cat-card.open .cat-arrow{transform:rotate(90deg)}
 
+/* la altura del acordeón la controla el JS (scrollHeight), aquí solo el estado cerrado */
 .cat-body{
   max-height:0;
   overflow:hidden;
@@ -246,14 +250,13 @@ input[type=range].slider::-moz-range-thumb{
   padding:0 1.35rem;
 }
 .cat-card.open .cat-body{
-  max-height:1400px;
   padding:0 1.35rem 1.1rem;
 }
 
 .obra-fila{
   display:block;
   padding:0.9rem 0;
-  border-top:1px solid rgba(126,184,212,0.12);
+  border-top:1px solid rgba(126,184,212,0.08);
   text-decoration:none;
   color:inherit;
 }
@@ -263,7 +266,7 @@ input[type=range].slider::-moz-range-thumb{
 
 .obra-fila-static{
   padding:0.9rem 0;
-  border-top:1px solid rgba(126,184,212,0.12);
+  border-top:1px solid rgba(126,184,212,0.08);
 }
 
 .obra-tit{
@@ -301,14 +304,14 @@ footer{
   font-size:0.65rem;
   letter-spacing:0.15em;
   text-transform:uppercase;
-  color:rgba(126,184,212,0.3);
+  color:rgba(126,184,212,0.25);
 }
 .footer-mail{
   font-family:var(--courier);
   font-size:0.92rem;
   color:var(--acento);
   text-decoration:none;
-  border-bottom:1px solid rgba(240,214,140,0.3);
+  border-bottom:1px solid rgba(240,214,140,0.2);
   padding-bottom:2px;
   transition:border-color 0.2s;
 }
@@ -324,10 +327,11 @@ footer{
       "header"
       "foto"
       "texto";
-    row-gap:1.5rem;
+    row-gap:1.75rem;
     justify-items:center;
     text-align:center;
   }
+  .marc-header{padding-bottom:0.25rem}
   .sobre-foto{width:150px}
   .sobre-texto{text-align:left;width:100%}
   .cat-grid{grid-template-columns:1fr}
@@ -338,7 +342,6 @@ footer{
 <body>
 
 <nav>
-  <span class="nav-nombre">Marc Jaén Domínguez</span>
   <ul class="nav-links">
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#obras">Publicaciones</a></li>
@@ -354,14 +357,15 @@ footer{
       <h1 class="marc-nombre">Marc Jaén</h1>
     </div>
 
-    <!-- FOTO: sustituye foto.jpg por el nombre de tu imagen -->
+    <!-- foto: sustituye foto.jpg por el nombre de tu imagen -->
     <div class="sobre-foto">
-      <img src="foto.jpg" alt="Marc Jaén" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="foto.jpg" alt="Marc Jaén" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="foto-placeholder" style="display:none">Tu foto aquí</div>
     </div>
 
     <div class="sobre-texto">
       <div class="sobre-bio" id="bioTexto"></div>
+      <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
     </div>
@@ -379,12 +383,12 @@ footer{
           <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
         </button>
         <div class="cat-body">
-          <a class="obra-fila" href="https://letralia.com/sala-de-ensayo/2026/06/15/estupidez-natural-asistida/" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://letralia.com/sala-de-ensayo/2026/06/15/estupidez-natural-asistida/" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Estupidez natural asistida</div>
             <div class="obra-desc">Sobre la irrupción de la inteligencia artificial en la sociedad actual.</div>
             <div class="obra-meta"><span>Letralia</span><span>Junio 2026</span></div>
           </a>
-          <a class="obra-fila" href="https://revistaiconica.com/apuntes-sobre-el-horror-de-tener-un-cuerpo-que-no-deben-tomarse-tan-en-serio/" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://revistaiconica.com/apuntes-sobre-el-horror-de-tener-un-cuerpo-que-no-deben-tomarse-tan-en-serio/" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Apuntes sobre el horror de tener un cuerpo que no deben tomarse tan en serio</div>
             <div class="obra-desc">Sobre el body horror en el cine y lo que dice de nuestra relación con el cuerpo.</div>
             <div class="obra-meta"><span>Revista Icónica</span><span>Junio 2026</span></div>
@@ -398,7 +402,7 @@ footer{
           <span class="cat-meta"><span class="cat-count">1</span><span class="cat-arrow">›</span></span>
         </button>
         <div class="cat-body">
-          <a class="obra-fila" href="https://somgandia.com/author/mj" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://somgandia.com/author/mj" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Cobertura de eventos locales</div>
             <div class="obra-desc">Redactor en Som Gandia, cubriendo actualidad y eventos de la ciudad.</div>
             <div class="obra-meta"><span>Som Gandia</span><span>2024—2026</span></div>
@@ -412,12 +416,12 @@ footer{
           <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
         </button>
         <div class="cat-body">
-          <a class="obra-fila" href="https://youtu.be/1i9xn49E3Xo" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://youtu.be/1i9xn49E3Xo" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Ruido</div>
             <div class="obra-desc">Guionista y ayudante de iluminación en el micrometraje, presentado a un festival de micrometrajes sobre la paz.</div>
             <div class="obra-meta"><span>Micrometraje</span><span>2025</span></div>
           </a>
-          <a class="obra-fila" href="https://youtu.be/iUqpj9CgzKc" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://youtu.be/iUqpj9CgzKc" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">El secuestrador secuestrado</div>
             <div class="obra-desc">Guion y sonido en el cortometraje.</div>
             <div class="obra-meta"><span>Cortometraje</span><span>2024</span></div>
@@ -431,7 +435,7 @@ footer{
           <span class="cat-meta"><span class="cat-count">4</span><span class="cat-arrow">›</span></span>
         </button>
         <div class="cat-body">
-          <a class="obra-fila" href="https://youtu.be/EeJYTK-AFF4" target="_blank" rel="noopener">
+          <a class="obra-fila" href="https://youtu.be/EeJYTK-AFF4" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Punto Ciego</div>
             <div class="obra-desc">Ayudante de dirección del cortometraje, proyectado a principios de 2026.</div>
             <div class="obra-meta"><span>Cortometraje</span><span>2026</span></div>
@@ -474,19 +478,37 @@ const bios = [
   "Escribo ficción, ensayo, periodismo y guion. Me interesan el cine, la literatura y la tecnología cuando sirven para entender algo sobre las personas. He publicado en Letralia, Revista Icónica y Som Gandia, he participado en varios cortometrajes, he formado parte del jurado de Cinema Jove y coordino el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
   "Escribo ficción, ensayo, periodismo y guion. Me interesan el cine, la literatura y la tecnología cuando dejan de ser un tema y se convierten en una excusa para hablar de las personas. He publicado en Letralia, Revista Icónica y Som Gandia, he trabajado en varios cortometrajes, he formado parte del jurado de Cinema Jove y coordino el Biblioclub y el Cineclub de la Universitat Politècnica de València. Sigo escribiendo porque, por ahora, me parece una forma bastante razonable de intentar entender el mundo."
 ];
+
 const slider = document.getElementById('tonoSlider');
 const bio    = document.getElementById('bioTexto');
+let bioTimer = null;
 
 function update(v){
-  bio.style.opacity='0';
-  setTimeout(()=>{ bio.textContent=bios[v]; bio.style.opacity='1'; },180);
+  bio.style.opacity = '0';
+  clearTimeout(bioTimer);
+  bioTimer = setTimeout(() => {
+    bio.textContent = bios[v];
+    bio.style.opacity = '1';
+  }, 180);
 }
 slider.addEventListener('input', e => update(parseInt(e.target.value)));
 update(3);
 
+// acordeón de publicaciones, altura calculada según el contenido real
 function toggleCat(header){
   const card = header.closest('.cat-card');
-  card.classList.toggle('open');
+  const body = card.querySelector('.cat-body');
+
+  if(card.classList.contains('open')){
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      card.classList.remove('open');
+      body.style.maxHeight = '0px';
+    });
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
 }
 </script>
 </body>
