@@ -11,12 +11,14 @@
 <!-- Open Graph / redes sociales -->
 <meta property="og:title" content="Marc Jaén Domínguez">
 <meta property="og:description" content="Marc Jaén Domínguez escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
-<meta property="og:image" content="logomarc.png">
+<meta property="og:image" content="https://marcjaen.es/logomarc.png">
+<meta property="og:url" content="https://marcjaen.es">
+<meta property="og:site_name" content="Marc Jaén">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Marc Jaén Domínguez">
 <meta name="twitter:description" content="Marc Jaén Domínguez escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
-<meta name="twitter:image" content="logomarc.png">
+<meta name="twitter:image" content="https://marcjaen.es/logomarc.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -110,6 +112,31 @@ nav{
   line-height:1;
   color:var(--tinta);
 }
+
+.marc-titulo{
+  display:flex;
+  flex-direction:column;
+}
+
+.marc-subtitulo{
+  font-family:var(--inter);
+  font-size:0.82rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--acento2);
+  margin-top:0.45rem;
+}
+
+.marc-mail{
+  font-family:var(--inter);
+  font-size:0.75rem;
+  letter-spacing:0.03em;
+  color:var(--gris);
+  text-decoration:none;
+  margin-top:0.4rem;
+  transition:color 0.2s;
+}
+.marc-mail:hover{color:var(--acento)}
 
 .sobre-foto{
   grid-area:foto;
@@ -317,16 +344,22 @@ footer{
   text-transform:uppercase;
   color:rgba(126,184,212,0.25);
 }
-.footer-mail{
-  font-family:var(--courier);
-  font-size:0.92rem;
+.footer-contacto{
+  font-family:var(--inter);
+  font-size:0.75rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
   color:var(--acento);
   text-decoration:none;
-  border-bottom:1px solid rgba(240,214,140,0.2);
-  padding-bottom:2px;
-  transition:border-color 0.2s;
+  border:1px solid rgba(240,214,140,0.3);
+  padding:.7rem 1.4rem;
+  transition:.2s;
 }
-.footer-mail:hover{border-color:var(--acento)}
+
+.footer-contacto:hover{
+  background:rgba(240,214,140,.08);
+  border-color:var(--acento);
+}
 
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
@@ -355,7 +388,7 @@ footer{
 <nav>
   <ul class="nav-links">
     <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#obras">Publicaciones</a></li>
+    <li><a href="#obras">Obra</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -365,7 +398,12 @@ footer{
   <div class="sobre-grid" id="sobre-mi">
     <div class="marc-header">
       <img src="logomarcblanco.png" alt="Logo Marc Jaén" class="marc-logo">
-      <h1 class="marc-nombre">Marc Jaén</h1>
+
+      <div class="marc-titulo">
+        <h1 class="marc-nombre">Marc Jaén</h1>
+        <p class="marc-subtitulo">Periodista cultural</p>
+        <a href="mailto:marcjaen@marcjaen.es" class="marc-mail">marcjaen@marcjaen.es</a>
+      </div>
     </div>
 
     <!-- foto: sustituye foto.jpg por el nombre de tu imagen -->
@@ -495,7 +533,10 @@ footer{
 
 <footer id="contacto">
   <span class="footer-copy">© Marc Jaén Domínguez</span>
-  <a href="mailto:marcjaen@marcjaen.es" class="footer-mail">marcjaen@marcjaen.es</a>
+
+  <a href="mailto:marcjaen@marcjaen.es" class="footer-contacto">
+      Contacta
+  </a>
 </footer>
 
 <script>
