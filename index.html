@@ -380,6 +380,7 @@ footer{
   .sobre-texto{text-align:left;width:100%}
   .cat-grid{grid-template-columns:1fr}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
+  footer > div{flex-wrap:wrap}
 }
 </style>
 </head>
@@ -403,6 +404,7 @@ footer{
         <h1 class="marc-nombre">Marc Jaén</h1>
         <p class="marc-subtitulo">Periodista cultural</p>
         <a href="mailto:marcjaen@marcjaen.es" class="marc-mail">marcjaen@marcjaen.es</a>
+        <a href="cv-marc-jaen.pdf" target="_blank" rel="noopener noreferrer" class="marc-mail">Descargar CV ↓</a>
       </div>
     </div>
 
@@ -534,9 +536,14 @@ footer{
 <footer id="contacto">
   <span class="footer-copy">© Marc Jaén Domínguez</span>
 
-  <a href="mailto:marcjaen@marcjaen.es" class="footer-contacto">
-      Contacta
-  </a>
+  <div style="display:flex;gap:1rem;">
+    <a href="cv-marc-jaen.pdf" target="_blank" rel="noopener noreferrer" class="footer-contacto">
+        Descargar CV
+    </a>
+    <a href="mailto:marcjaen@marcjaen.es" class="footer-contacto">
+        Contacta
+    </a>
+  </div>
 </footer>
 
 <script>
