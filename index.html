@@ -471,6 +471,30 @@ footer{
 
       <div class="cat-card">
         <button class="cat-header" onclick="toggleCat(this)">
+          <span class="cat-titulo">Trayectoria</span>
+          <span class="cat-meta"><span class="cat-count">3</span><span class="cat-arrow">›</span></span>
+        </button>
+        <div class="cat-body">
+          <div class="obra-fila-static">
+            <div class="obra-tit">Jurado de cortometrajes</div>
+            <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinema Jove, festival internacional de cine de València.</div>
+            <div class="obra-meta"><span>Cinema Jove</span><span>2026</span></div>
+          </div>
+          <a class="obra-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Coordinador del Biblioclub</div>
+            <div class="obra-desc">Coordinación del club de lectura de la Universitat Politècnica de València.</div>
+            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
+          </a>
+          <a class="obra-fila" href="Cineclub.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Coordinador del Cineclub</div>
+            <div class="obra-desc">Coordinación del club de cine de la Universitat Politècnica de València.</div>
+            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <button class="cat-header" onclick="toggleCat(this)">
           <span class="cat-titulo">Guion</span>
           <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
         </button>
@@ -491,37 +515,13 @@ footer{
       <div class="cat-card">
         <button class="cat-header" onclick="toggleCat(this)">
           <span class="cat-titulo">Audiovisual</span>
-          <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
+          <span class="cat-meta"><span class="cat-count">1</span><span class="cat-arrow">›</span></span>
         </button>
         <div class="cat-body">
-          <div class="obra-fila-static">
-            <div class="obra-tit">Jurado de cortometrajes</div>
-            <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinema Jove, festival internacional de cine de València.</div>
-            <div class="obra-meta"><span>Cinema Jove</span><span>2026</span></div>
-          </div>
           <a class="obra-fila" href="https://youtu.be/EeJYTK-AFF4" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Punto Ciego</div>
             <div class="obra-desc">Ayudante de dirección del cortometraje, proyectado en enero de 2026.</div>
             <div class="obra-meta"><span>Cortometraje</span><span>2026</span></div>
-          </a>
-        </div>
-      </div>
-
-      <div class="cat-card">
-        <button class="cat-header" onclick="toggleCat(this)">
-          <span class="cat-titulo">Coordinación</span>
-          <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
-        </button>
-        <div class="cat-body">
-          <a class="obra-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Coordinador del Biblioclub</div>
-            <div class="obra-desc">Coordinación del club de lectura de la Universitat Politècnica de València.</div>
-            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
-          </a>
-          <a class="obra-fila" href="Cineclub.pdf" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Coordinador del Cineclub</div>
-            <div class="obra-desc">Coordinación del club de cine de la Universitat Politècnica de València.</div>
-            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
           </a>
         </div>
       </div>
@@ -544,10 +544,10 @@ const bios = [
   "Escribe.",
   "Escribe ficción, ensayo y periodismo.",
   "Escribe ficción, ensayo, periodismo y guion. Le interesan el cine, la literatura y la música, y suele consumir cultura como parte de su día a día.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion. Le interesan el cine, la literatura y la tecnología cuando sirven para entender algo sobre las personas. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, ha participado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion. Le interesan el cine, la literatura y la tecnología cuando dejan de ser un tema y se convierten en una excusa para hablar de las personas. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, ha trabajado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València. Sigue escribiendo porque, por ahora, le parece una forma bastante razonable de intentar entender el mundo."
+  "Marc Jaén nació en 2005 y reside  en Valencia. Escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.",
+  "Marc Jaén nació en 2005 y reside  en Valencia. Escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside  en Valencia. Escribe ficción, ensayo, periodismo y guion. Le interesan el cine, la literatura y la tecnología cuando sirven para entender algo sobre las personas. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, ha participado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside  en Valencia. Escribe ficción, ensayo, periodismo y guion. Le interesan el cine, la literatura y la tecnología cuando dejan de ser un tema y se convierten en una excusa para hablar de las personas. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, ha trabajado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València. Sigue escribiendo porque, por ahora, le parece una forma bastante razonable de intentar entender el mundo."
 ];
 
 const slider = document.getElementById('tonoSlider');
