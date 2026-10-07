@@ -3,23 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio personal de Marc Jaén Domínguez: ensayo, artículos, guion y otros proyectos.">
+
+<!-- SEO -->
+<title>Marc Jaén | Periodista cultural</title>
+<meta name="description" content="Marc Jaén Domínguez, periodista cultural. Ensayo, artículos, crónica y guion. Publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. Coordinador del Biblioclub y el Cineclub de la UPV.">
 <meta name="author" content="Marc Jaén Domínguez">
-<title>Marc Jaén Domínguez</title>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#111d30">
+<link rel="canonical" href="https://marcjaen.es/">
 <link rel="icon" type="image/png" href="logomarc.png">
 
 <!-- Open Graph / redes sociales -->
-<meta property="og:title" content="Marc Jaén Domínguez">
-<meta property="og:description" content="Marc Jaén Domínguez escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
-<meta property="og:image" content="https://marcjaen.es/logomarc.png">
-<meta property="og:url" content="https://marcjaen.es">
-<meta property="og:site_name" content="Marc Jaén">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Marc Jaén">
+<meta property="og:title" content="Marc Jaén | Periodista cultural">
+<meta property="og:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
+<meta property="og:url" content="https://marcjaen.es/">
+<meta property="og:image" content="https://marcjaen.es/logomarc.png">
+<meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Marc Jaén Domínguez">
-<meta name="twitter:description" content="Marc Jaén Domínguez escribe ficción, ensayo, periodismo y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
+<meta name="twitter:title" content="Marc Jaén | Periodista cultural">
+<meta name="twitter:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia.">
 <meta name="twitter:image" content="https://marcjaen.es/logomarc.png">
 
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://marcjaen.es/#website",
+      "url": "https://marcjaen.es/",
+      "name": "Marc Jaén",
+      "alternateName": "Marc Jaén Domínguez",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://marcjaen.es/#person",
+      "name": "Marc Jaén",
+      "alternateName": ["Marc Jaén Domínguez", "Marc Jaen"],
+      "url": "https://marcjaen.es/",
+      "image": "https://marcjaen.es/foto.jpg",
+      "email": "mailto:marcjaen@marcjaen.es",
+      "jobTitle": "Periodista cultural",
+      "description": "Periodista cultural, ensayista y guionista. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+      "knowsAbout": ["periodismo cultural", "ensayo", "cine", "literatura", "música", "guion"],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universitat Politècnica de València"
+      }
+      /* Cuando tengas perfiles (LinkedIn, X, Instagram...), añade aquí:
+         ,"sameAs": ["https://www.linkedin.com/in/...", "https://x.com/..."] */
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -394,7 +437,7 @@ footer{
   </ul>
 </nav>
 
-<div class="contenido">
+<main class="contenido">
 
   <div class="sobre-grid" id="sobre-mi">
     <div class="marc-header">
@@ -410,12 +453,13 @@ footer{
 
     <!-- foto: sustituye foto.jpg por el nombre de tu imagen -->
     <div class="sobre-foto">
-      <img src="foto.jpg" alt="Marc Jaén" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="foto.jpg" alt="Marc Jaén Domínguez, periodista cultural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="foto-placeholder" style="display:none">.</div>
     </div>
 
     <div class="sobre-texto">
-      <div class="sobre-bio" id="bioTexto"></div>
+      <!-- Texto inicial en HTML estático para que los buscadores lo lean sin ejecutar JS -->
+      <div class="sobre-bio" id="bioTexto">Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Ha publicado en Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.</div>
       <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
@@ -532,7 +576,7 @@ footer{
     </div>
   </div>
 
-</div>
+</main>
 
 <footer id="contacto">
   <span class="footer-copy">© Marc Jaén Domínguez</span>
