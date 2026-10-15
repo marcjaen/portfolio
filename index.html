@@ -6,7 +6,7 @@
 
 <!-- SEO -->
 <title>Marc Jaén | Periodista cultural</title>
-<meta name="description" content="Marc Jaén Domínguez, periodista cultural. Ensayo, artículos, crónica y guion. Publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia. Coordinador del Biblioclub y el Cineclub de la UPV.">
+<meta name="description" content="Marc Jaén Domínguez, periodista cultural. Redactor en la revista 35mm. Ensayo, artículos, crónica y guion. Publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia. Coordinador del Biblioclub y el Cineclub de la UPV.">
 <meta name="author" content="Marc Jaén Domínguez">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#111d30">
@@ -17,13 +17,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marc Jaén">
 <meta property="og:title" content="Marc Jaén | Periodista cultural">
-<meta property="og:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia, y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
+<meta property="og:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Es redactor en la revista 35mm y ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
 <meta property="og:url" content="https://marcjaen.es/">
 <meta property="og:image" content="https://marcjaen.es/logomarc.png">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Marc Jaén | Periodista cultural">
-<meta name="twitter:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia.">
+<meta name="twitter:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Redactor en la revista 35mm. Ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia.">
 <meta name="twitter:image" content="https://marcjaen.es/logomarc.png">
 
 <!-- Datos estructurados -->
@@ -48,8 +48,13 @@
       "image": "https://marcjaen.es/foto.jpg",
       "email": "mailto:marcjaen@marcjaen.es",
       "jobTitle": "Periodista cultural",
-      "description": "Periodista cultural, ensayista y guionista. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+      "description": "Periodista cultural, ensayista y guionista. Redactor en la revista 35mm. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
       "knowsAbout": ["periodismo cultural", "ensayo", "cine", "literatura", "música", "guion"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "35mm",
+        "url": "https://35milimetros.es/"
+      },
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "Universitat Politècnica de València"
@@ -288,6 +293,27 @@ input[type=range].slider::-moz-range-thumb{
   align-self:start;
 }
 
+/* tarjeta de 35mm: enlace directo, ocupa todo el ancho de la fila */
+.cat-link{
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:1.1rem 1.35rem;
+  text-decoration:none;
+  color:inherit;
+  transition:border-color 0.2s;
+}
+.cat-link:hover{border-color:rgba(240,214,140,0.35)}
+.cat-link:hover .cat-titulo{color:var(--acento)}
+.cat-titulo{transition:color 0.2s}
+.cat-logo{
+  height:1.5rem;
+  width:auto;
+  display:block;
+}
+
 .cat-header{
   width:100%;
   display:flex;
@@ -459,7 +485,7 @@ footer{
 
     <div class="sobre-texto">
       <!-- Texto inicial en HTML estático para que los buscadores lo lean sin ejecutar JS -->
-      <div class="sobre-bio" id="bioTexto">Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.</div>
+      <div class="sobre-bio" id="bioTexto">Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.</div>
       <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
@@ -471,6 +497,15 @@ footer{
     <div class="sec-hint">Pincha sobre una categoría para ver las publicaciones.</div>
 
     <div class="cat-grid">
+
+      <!-- 35mm: enlace directo con el logo a la derecha (guarda el logo como logo-35mm.png) -->
+      <a class="cat-card cat-link" href="https://35milimetros.es/author/marcjaen/" target="_blank" rel="noopener noreferrer">
+        <span class="cat-titulo">35mm</span>
+        <span class="cat-meta">
+          <span class="cat-count">Redactor</span>
+          <img src="logo-35mm.png" alt="Logo de la revista 35mm" class="cat-logo">
+        </span>
+      </a>
 
       <div class="cat-card">
         <button class="cat-header" onclick="toggleCat(this)">
@@ -549,7 +584,7 @@ footer{
           <div class="obra-fila-static">
             <div class="obra-tit">Ayudante en el congreso de la SEP</div>
             <div class="obra-desc">Apoyo en la organización del XXXII Congreso Internacional de la Sociedad Española de Periodística, celebrado en el Campus de Gandia de la UPV.</div>
-            <div class="obra-meta"><span>MAY</span><span>2026</span></div>
+            <div class="obra-meta"><span>SEP</span><span>2026</span></div>
           </div>
           <div class="obra-fila-static">
             <div class="obra-tit">Estancia Erasmus en Lisboa</div>
@@ -605,11 +640,11 @@ footer{
 const bios = [
   "Escribe.",
   "Escribe ficción, ensayo y periodismo.",
-  "Escribe ficción, ensayo, periodismo y guion. Le interesa la cultura pop en todas sus formas. Suele consumir cine, música y literatura como parte de su día a día.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando sirven para entender algo sobre las personas, y sobre todo cuando la cultura pop les da una identidad mayor. Ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia, ha participado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
-  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando dejan de ser un tema y se convierten en una excusa para hablar de la identidad y de lo que la cultura pop revela sobre las personas. Ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia, ha trabajado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València."
+  "Escribe ficción, ensayo, periodismo y guion. Le interesa la cultura pop en todas sus formas. Es redactor en la revista 35mm y suele consumir cine, música y literatura como parte de su día a día.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando sirven para entender algo sobre las personas, y sobre todo cuando la cultura pop les da una identidad mayor. Actualmente es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. Ha participado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando dejan de ser un tema y se convierten en una excusa para hablar de la identidad y de lo que la cultura pop revela sobre las personas. Actualmente es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. Ha trabajado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València."
 ];
 
 const slider = document.getElementById('tonoSlider');
