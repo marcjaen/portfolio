@@ -253,6 +253,28 @@ input[type=range].slider::-moz-range-thumb{
   background:var(--acento);border-radius:50%;cursor:pointer;border:none;
 }
 
+.cita{
+  margin-top:2.2rem;
+  padding-left:1.25rem;
+  border-left:2px solid rgba(240,214,140,0.35);
+}
+.cita blockquote{
+  font-family:var(--courier);
+  font-style:italic;
+  font-size:0.95rem;
+  line-height:1.75;
+  color:var(--sub);
+}
+.cita figcaption{
+  font-family:var(--inter);
+  font-size:0.68rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gris);
+  margin-top:0.7rem;
+}
+.cita cite{font-style:normal;color:var(--acento)}
+
 .obras-sec{scroll-margin-top:5rem}
 
 .sec-label{
@@ -489,6 +511,11 @@ footer{
       <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
+
+      <figure class="cita">
+        <blockquote>«La desconfianza se contagia más rápido que cualquier dato. Un sistema que confía en sí mismo no pone trabas al voto, sea desde Lisboa o desde Lugo.»</blockquote>
+        <figcaption>Marc Jaén, <cite>El País</cite> · Octubre 2026</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -508,11 +535,11 @@ footer{
       </a>
 
       <div class="cat-card">
-        <button class="cat-header" onclick="toggleCat(this)">
+        <button class="cat-header" id="btn-articulos" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-articulos">
           <span class="cat-titulo">Artículos</span>
-          <span class="cat-meta"><span class="cat-count">5</span><span class="cat-arrow">›</span></span>
+          <span class="cat-meta"><span class="cat-count">5</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
-        <div class="cat-body">
+        <div class="cat-body" id="cat-articulos" role="region" aria-labelledby="btn-articulos" inert>
           <a class="obra-fila" href="https://elpais.com/opinion/2026-10-15/una-lectora-el-problema-no-es-el-turismo-sino-desplazar-la-vida-que-hace-atractiva-una-ciudad.html" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">No siembren la duda</div>
             <div class="obra-desc">Carta al director sobre el voto en el extranjero, publicada en la sección de Opinión de El País.</div>
@@ -542,11 +569,11 @@ footer{
       </div>
 
       <div class="cat-card">
-        <button class="cat-header" onclick="toggleCat(this)">
+        <button class="cat-header" id="btn-ensayo" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-ensayo">
           <span class="cat-titulo">Ensayo</span>
-          <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow">›</span></span>
+          <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
-        <div class="cat-body">
+        <div class="cat-body" id="cat-ensayo" role="region" aria-labelledby="btn-ensayo" inert>
           <a class="obra-fila" href="https://letralia.com/sala-de-ensayo/2026/06/15/estupidez-natural-asistida/" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Estupidez natural asistida</div>
             <div class="obra-desc">Sobre la irrupción de la inteligencia artificial en la sociedad actual.</div>
@@ -561,20 +588,15 @@ footer{
       </div>
 
       <div class="cat-card">
-        <button class="cat-header" onclick="toggleCat(this)">
+        <button class="cat-header" id="btn-trayectoria" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-trayectoria">
           <span class="cat-titulo">Trayectoria</span>
-          <span class="cat-meta"><span class="cat-count">7</span><span class="cat-arrow">›</span></span>
+          <span class="cat-meta"><span class="cat-count">6</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
-        <div class="cat-body">
+        <div class="cat-body" id="cat-trayectoria" role="region" aria-labelledby="btn-trayectoria" inert>
           <a class="obra-fila" href="certificado-cinema-jove.pdf" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Jurado de cortometrajes</div>
             <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinema Jove, festival internacional de cine de València.</div>
             <div class="obra-meta"><span>Cinema Jove</span><span>2026</span></div>
-          </a>
-          <a class="obra-fila" href="https://www.huffingtonpost.es/virales/un-espanol-vive-portugal-responde-han-dicho-pp-vox-voto-correo-importante-carta-director-el-pais-f202610.html" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Mención en HuffPost España</div>
-            <div class="obra-desc">El HuffPost recoge mi carta al director de El País sobre el voto por correo desde el extranjero.</div>
-            <div class="obra-meta"><span>HuffPost España</span><span>Octubre 2026</span></div>
           </a>
           <a class="obra-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Coordinador del Biblioclub</div>
@@ -605,11 +627,11 @@ footer{
       </div>
 
       <div class="cat-card">
-        <button class="cat-header" onclick="toggleCat(this)">
+        <button class="cat-header" id="btn-audiovisual" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-audiovisual">
           <span class="cat-titulo">Audiovisual</span>
-          <span class="cat-meta"><span class="cat-count">3</span><span class="cat-arrow">›</span></span>
+          <span class="cat-meta"><span class="cat-count">3</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
-        <div class="cat-body">
+        <div class="cat-body" id="cat-audiovisual" role="region" aria-labelledby="btn-audiovisual" inert>
           <a class="obra-fila" href="https://youtu.be/EeJYTK-AFF4" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">Punto Ciego</div>
             <div class="obra-desc">Ayudante de dirección del cortometraje, proyectado en enero de 2026.</div>
@@ -624,6 +646,20 @@ footer{
             <div class="obra-tit">El secuestrador secuestrado</div>
             <div class="obra-desc">Guionista en el cortometraje.</div>
             <div class="obra-meta"><span>Cortometraje</span><span>2024</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <button class="cat-header" id="btn-prensa" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-prensa">
+          <span class="cat-titulo">Prensa</span>
+          <span class="cat-meta"><span class="cat-count">1</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+        </button>
+        <div class="cat-body" id="cat-prensa" role="region" aria-labelledby="btn-prensa" inert>
+          <a class="obra-fila" href="https://www.huffingtonpost.es/virales/un-espanol-vive-portugal-responde-han-dicho-pp-vox-voto-correo-importante-carta-director-el-pais-f202610.html" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Mención en HuffPost España</div>
+            <div class="obra-desc">Recogen la carta al director de Marc Jaén en El País sobre el voto por correo desde el extranjero.</div>
+            <div class="obra-meta"><span>HuffPost España</span><span>Octubre 2026</span></div>
           </a>
         </div>
       </div>
@@ -678,12 +714,19 @@ function toggleCat(header){
   const body = card.querySelector('.cat-body');
 
   if(card.classList.contains('open')){
+    header.setAttribute('aria-expanded', 'false');
     body.style.maxHeight = body.scrollHeight + 'px';
     requestAnimationFrame(() => {
       card.classList.remove('open');
       body.style.maxHeight = '0px';
     });
+    // al cerrar, los enlaces ocultos dejan de ser enfocables con el teclado
+    setTimeout(() => {
+      if(!card.classList.contains('open')) body.inert = true;
+    }, 360);
   } else {
+    header.setAttribute('aria-expanded', 'true');
+    body.inert = false;
     card.classList.add('open');
     body.style.maxHeight = body.scrollHeight + 'px';
   }
