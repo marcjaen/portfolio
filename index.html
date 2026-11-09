@@ -459,7 +459,7 @@ input[type=range].slider::-moz-range-thumb{
 }
 .obra-meta span+span::before{content:'  ·  '}
 
-/* galería de festivales: 2 fotos grandes arriba y 3 debajo */
+/* galería de festivales: 2 fotos grandes arriba y el resto en filas de 3 */
 .festivales-sec{margin-top:4.5rem}
 .galeria{
   display:grid;
@@ -550,6 +550,9 @@ footer{
   .galeria figure:first-child{grid-column:1 / -1}
   .galeria figure:nth-child(-n+2) img{aspect-ratio:1/1}
   .galeria figure:first-child img{aspect-ratio:4/3}
+  /* con 8 fotos, la última ocupa todo el ancho para no quedar sola */
+  .galeria figure:last-child{grid-column:1 / -1}
+  .galeria figure:last-child img{aspect-ratio:4/3}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
   footer > div{flex-wrap:wrap}
 }
@@ -763,31 +766,45 @@ footer{
   </div>
 
   <!-- FESTIVALES: guarda las fotos con estos nombres (cuadradas o 4:3, menos de 300 KB cada una).
-       Si falta alguna imagen, esa foto se oculta sola. -->
+       Si falta alguna imagen, esa foto se oculta sola.
+       Nombres: leffest-cronenberg.jpg, leffest-dafoe.jpg, leffest-videodrome.jpg, leffest-dafoe-2.jpg,
+                doclisboa.jpg, festa-cinema-frances.jpg, fib-fratellis.jpg, fib-ambiente.jpg -->
   <div class="festivales-sec" id="festivales">
     <div class="sec-label">Festivales</div>
     <div class="sec-hint">Fotografías propias de las coberturas.</div>
 
     <div class="galeria">
       <figure>
+        <img src="leffest-cronenberg.jpg" alt="David Cronenberg en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · David Cronenberg</figcaption>
+      </figure>
+      <figure>
         <img src="leffest-dafoe.jpg" alt="Willem Dafoe en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
         <figcaption>LEFFEST 2026 · Willem Dafoe</figcaption>
       </figure>
       <figure>
-        <img src="leffest-cronenberg.jpg" alt="Póster de Videodrome firmado por David Cronenberg en el LEFFEST 2026" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption>LEFFEST 2026 · Póster de <em>Videodrome</em> firmado por David Cronenberg</figcaption>
+        <img src="leffest-videodrome.jpg" alt="Póster de Videodrome firmado por David Cronenberg en el LEFFEST 2026" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · Póster de <em>Videodrome</em> firmado por Cronenberg</figcaption>
       </figure>
       <figure>
-        <img src="doclisboa.jpg" alt="Doclisboa 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption><a href="https://35milimetros.es/doclisboa-2026-reportaje-y-criticas/" target="_blank" rel="noopener noreferrer">Doclisboa 2026 · 35mm</a></figcaption>
+        <img src="leffest-dafoe-2.jpg" alt="Willem Dafoe en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · Willem Dafoe</figcaption>
+      </figure>
+      <figure>
+        <img src="doclisboa.jpg" alt="Entrevista a Margarida Gil en Doclisboa 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://35milimetros.es/doclisboa-2026-reportaje-y-criticas/" target="_blank" rel="noopener noreferrer">Doclisboa 2026 · Entrevista a Margarida Gil</a></figcaption>
       </figure>
       <figure>
         <img src="festa-cinema-frances.jpg" alt="Festa do Cinema Francês 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption><a href="https://35milimetros.es/festa-do-cinema-frances-2026-criticas/" target="_blank" rel="noopener noreferrer">Festa do Cinema Francês 2026 · 35mm</a></figcaption>
+        <figcaption><a href="https://35milimetros.es/festa-do-cinema-frances-2026-criticas/" target="_blank" rel="noopener noreferrer">Festa do Cinema Francês 2026 · Cobertura</a></figcaption>
       </figure>
       <figure>
-        <img src="fib.jpg" alt="Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · Indyrock</a></figcaption>
+        <img src="fib-fratellis.jpg" alt="The Fratellis en el Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · The Fratellis</a></figcaption>
+      </figure>
+      <figure>
+        <img src="fib-ambiente.jpg" alt="Ambiente del Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · Ambiente</a></figcaption>
       </figure>
     </div>
   </div>
