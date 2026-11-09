@@ -459,6 +459,41 @@ input[type=range].slider::-moz-range-thumb{
 }
 .obra-meta span+span::before{content:'  ·  '}
 
+/* galería de festivales: 2 fotos grandes arriba y 3 debajo */
+.festivales-sec{margin-top:4.5rem}
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:1.1rem;
+}
+.galeria figure{
+  grid-column:span 2;
+  background:var(--fondo-alt);
+  border:1px solid var(--linea);
+}
+.galeria figure:nth-child(-n+2){grid-column:span 3}
+.galeria img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+}
+.galeria figure:nth-child(-n+2) img{aspect-ratio:4/3}
+.galeria figcaption{
+  font-family:var(--inter);
+  font-size:0.68rem;
+  letter-spacing:0.08em;
+  color:var(--gris);
+  line-height:1.5;
+  padding:0.7rem 0.9rem;
+}
+.galeria figcaption a{
+  color:inherit;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.galeria figcaption a:hover{color:var(--acento)}
+
 footer{
   padding:2rem 4rem;
   border-top:1px solid var(--linea);
@@ -509,6 +544,12 @@ footer{
   .sobre-texto{text-align:left;width:100%}
   .destacado img{width:56px;height:56px}
   .cat-grid{grid-template-columns:1fr}
+  .galeria{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+  .galeria figure,
+  .galeria figure:nth-child(-n+2){grid-column:span 1}
+  .galeria figure:first-child{grid-column:1 / -1}
+  .galeria figure:nth-child(-n+2) img{aspect-ratio:1/1}
+  .galeria figure:first-child img{aspect-ratio:4/3}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
   footer > div{flex-wrap:wrap}
 }
@@ -718,6 +759,36 @@ footer{
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- FESTIVALES: guarda las fotos con estos nombres (cuadradas o 4:3, menos de 300 KB cada una).
+       Si falta alguna imagen, esa foto se oculta sola. -->
+  <div class="festivales-sec" id="festivales">
+    <div class="sec-label">Festivales</div>
+    <div class="sec-hint">Fotografías propias de las coberturas.</div>
+
+    <div class="galeria">
+      <figure>
+        <img src="leffest-dafoe.jpg" alt="Willem Dafoe en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · Willem Dafoe</figcaption>
+      </figure>
+      <figure>
+        <img src="leffest-cronenberg.jpg" alt="Póster de Videodrome firmado por David Cronenberg en el LEFFEST 2026" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · Póster de <em>Videodrome</em> firmado por David Cronenberg</figcaption>
+      </figure>
+      <figure>
+        <img src="doclisboa.jpg" alt="Doclisboa 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://35milimetros.es/doclisboa-2026-reportaje-y-criticas/" target="_blank" rel="noopener noreferrer">Doclisboa 2026 · 35mm</a></figcaption>
+      </figure>
+      <figure>
+        <img src="festa-cinema-frances.jpg" alt="Festa do Cinema Francês 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://35milimetros.es/festa-do-cinema-frances-2026-criticas/" target="_blank" rel="noopener noreferrer">Festa do Cinema Francês 2026 · 35mm</a></figcaption>
+      </figure>
+      <figure>
+        <img src="fib.jpg" alt="Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · Indyrock</a></figcaption>
+      </figure>
     </div>
   </div>
 
