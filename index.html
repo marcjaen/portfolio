@@ -275,6 +275,44 @@ input[type=range].slider::-moz-range-thumb{
 }
 .cita cite{font-style:normal;color:var(--acento)}
 
+/* pieza destacada, bajo la cita */
+.destacado{
+  display:flex;
+  align-items:center;
+  gap:1.1rem;
+  margin-top:2rem;
+  padding:0.9rem 1.1rem;
+  background:var(--fondo-alt);
+  border:1px solid var(--linea);
+  border-left:2px solid rgba(240,214,140,0.35);
+  text-decoration:none;
+  color:inherit;
+  transition:border-color 0.2s;
+}
+.destacado:hover{border-color:rgba(240,214,140,0.35)}
+.destacado:hover .destacado-tit{color:var(--acento)}
+.destacado img{
+  width:72px;height:72px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.destacado-etiqueta{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--gris);
+  margin-bottom:0.3rem;
+}
+.destacado-tit{
+  font-family:var(--courier);
+  font-size:0.95rem;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--tinta);
+  transition:color 0.2s;
+}
+
 .obras-sec{scroll-margin-top:5rem}
 
 .sec-label{
@@ -469,6 +507,7 @@ footer{
   .marc-header{padding-bottom:0.25rem}
   .sobre-foto{width:150px}
   .sobre-texto{text-align:left;width:100%}
+  .destacado img{width:56px;height:56px}
   .cat-grid{grid-template-columns:1fr}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
   footer > div{flex-wrap:wrap}
@@ -512,6 +551,16 @@ footer{
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
 
+      <!-- PIEZA DESTACADA: antes de subir la web, sustituye href="#" por la URL real de la crónica
+           y guarda la foto como cronenberg-poster.jpg (cuadrada, menos de 200 KB). -->
+      <a class="destacado" href="#" target="_blank" rel="noopener noreferrer">
+        <img src="cronenberg-poster.jpg" alt="Póster de Videodrome firmado por David Cronenberg" onerror="this.style.display='none'">
+        <div>
+          <div class="destacado-etiqueta">Crónica · LEFFEST 2026 · 35mm</div>
+          <div class="destacado-tit">Cara a cara con Cronenberg y Dafoe: crónica del LEFFEST 2026</div>
+        </div>
+      </a>
+
       <figure class="cita">
         <blockquote>«La desconfianza se contagia más rápido que cualquier dato. Un sistema que confía en sí mismo no pone trabas al voto, sea desde Lisboa o desde Lugo.»</blockquote>
         <figcaption>Marc Jaén, <cite>El País</cite> · Octubre 2026</figcaption>
@@ -537,9 +586,14 @@ footer{
       <div class="cat-card">
         <button class="cat-header" id="btn-articulos" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-articulos">
           <span class="cat-titulo">Artículos</span>
-          <span class="cat-meta"><span class="cat-count">6</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+          <span class="cat-meta"><span class="cat-count">7</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
         <div class="cat-body" id="cat-articulos" role="region" aria-labelledby="btn-articulos" inert>
+          <a class="obra-fila" href="https://www.elsaltodiario.com/musica/vicent-ballester-cuando-un-nino-no-tiene-una-ensenanza-musical-se-le-corta-posibilidad-ser-feliz" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Vicent Ballester: «Cuando un niño no tiene una enseñanza musical, se le corta la posibilidad de ser más feliz»</div>
+            <div class="obra-desc">Entrevista al guitarrista y cofundador del Conservatori Tenor Cortis de Dénia sobre la enseñanza musical, el estado del centro y el lugar de las artes en la escuela.</div>
+            <div class="obra-meta"><span>El Salto</span><span>Noviembre 2026</span></div>
+          </a>
           <a class="obra-fila" href="https://elpais.com/opinion/2026-10-15/una-lectora-el-problema-no-es-el-turismo-sino-desplazar-la-vida-que-hace-atractiva-una-ciudad.html" target="_blank" rel="noopener noreferrer">
             <div class="obra-tit">No siembren la duda</div>
             <div class="obra-desc">Carta al director sobre el voto en el extranjero, publicada en la sección de Opinión de El País.</div>
