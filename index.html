@@ -459,28 +459,23 @@ input[type=range].slider::-moz-range-thumb{
 }
 .obra-meta span+span::before{content:'  ·  '}
 
-/* galería de festivales: 2 fotos grandes arriba, filas de 3 y las 2 últimas grandes */
+/* galería de festivales: 6 fotos, 3 filas de 2 */
 .festivales-sec{margin-top:4.5rem}
 .galeria{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:1.1rem;
 }
 .galeria figure{
-  grid-column:span 2;
   background:var(--fondo-alt);
   border:1px solid var(--linea);
 }
-.galeria figure:nth-child(-n+2){grid-column:span 3}
 .galeria img{
   width:100%;
-  aspect-ratio:1/1;
+  aspect-ratio:4/3;
   object-fit:cover;
   display:block;
 }
-.galeria figure:nth-child(-n+2) img{aspect-ratio:4/3}
-.galeria figure:nth-last-child(-n+2){grid-column:span 3}
-.galeria figure:nth-last-child(-n+2) img{aspect-ratio:4/3}
 .galeria figcaption{
   font-family:var(--inter);
   font-size:0.68rem;
@@ -547,13 +542,11 @@ footer{
   .destacado img{width:56px;height:56px}
   .cat-grid{grid-template-columns:1fr}
   .galeria{grid-template-columns:repeat(2,1fr);gap:0.8rem}
-  .galeria figure,
-  .galeria figure:nth-child(-n+2),
-  .galeria figure:nth-last-child(-n+2){grid-column:span 1}
-  .galeria figure:first-child{grid-column:1 / -1}
-  .galeria figure:nth-child(-n+2) img,
-  .galeria figure:nth-last-child(-n+2) img{aspect-ratio:1/1}
-  .galeria figure:first-child img{aspect-ratio:4/3}
+  .galeria figure:first-child,
+  .galeria figure:last-child{grid-column:1 / -1}
+  .galeria img{aspect-ratio:1/1}
+  .galeria figure:first-child img,
+  .galeria figure:last-child img{aspect-ratio:4/3}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
   footer > div{flex-wrap:wrap}
 }
@@ -768,7 +761,7 @@ footer{
 
   <!-- FESTIVALES: guarda las fotos con estos nombres (cuadradas o 4:3, menos de 300 KB cada una).
        Si falta alguna imagen, esa foto se oculta sola.
-       Nombres: leffest-cronenberg.jpg, leffest-dafoe.jpg, leffest-videodrome.jpg,
+       Nombres: leffest-cronenberg.jpg, leffest-dafoe.jpg,
                 doclisboa.jpg, festa-cinema-frances.jpg, fib-fratellis.jpg, fib-ambiente.jpg -->
   <div class="festivales-sec" id="festivales">
     <div class="sec-label">Festivales</div>
@@ -782,10 +775,6 @@ footer{
       <figure>
         <img src="leffest-dafoe.jpg" alt="Willem Dafoe en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
         <figcaption>LEFFEST 2026 · Willem Dafoe</figcaption>
-      </figure>
-      <figure>
-        <img src="leffest-videodrome.jpg" alt="Póster de Videodrome firmado por David Cronenberg en el LEFFEST 2026" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption>LEFFEST 2026 · Póster de <em>Videodrome</em> firmado por Cronenberg</figcaption>
       </figure>
       <figure>
         <img src="doclisboa.jpg" alt="Entrevista a Margarida Gil en Doclisboa 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
