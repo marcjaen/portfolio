@@ -67,7 +67,534 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --fondo:     #1a1c3d;
+  --fondo-nav: #12132e;
+  --fondo-alt: #2a2d57;
+  --acento:    #efaa90;
+  --acento2:   #97aab8;
+  --tinta:     #e4e9ed;
+  --sub:       #a8bfd4;
+  --gris:      #a3b8c9;
+  --gris-dim:  rgba(122,155,184,0.3);
+  --linea:     rgba(126,184,212,0.08);
+  --courier:'Courier Prime','Courier New',monospace;
+  --inter:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--tinta);font-family:var(--courier);min-height:100vh;overflow-x:hidden}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+nav{
+  position:fixed;top:0;left:0;right:0;
+  padding:1rem 3rem;
+  display:flex;justify-content:flex-end;align-items:center;
+  background:var(--fondo-nav);
+  border-bottom:1px solid var(--linea);
+  z-index:100;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  font-family:var(--inter);
+  font-size:0.8rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gris);
+  text-decoration:none;
+  transition:color 0.2s;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:0;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"]{color:var(--acento)}
+
+.contenido{
+  max-width:980px;
+  margin:0 auto;
+  padding:6.5rem 2.5rem 4rem;
+}
+
+/* ---------- cabecera ---------- */
+.sobre-grid{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  grid-template-areas:
+    ". header"
+    "foto texto";
+  column-gap:2.5rem;
+  row-gap:2.25rem;
+  align-items:start;
+  margin-bottom:3rem;
+  scroll-margin-top:5rem;
+}
+
+.marc-header{
+  grid-area:header;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1.1rem;
+  padding-bottom:0.75rem;
+}
+/* nombre y logo más pequeños (antes clamp(2.5rem,5.5vw,3.7rem)) */
+.marc-logo{
+  height:6.5rem;
+  width:auto;
+  display:block;
+}
+.marc-nombre{
+  font-family:var(--courier);
+  font-weight:700;
+  font-size:clamp(2rem,4.5vw,2.8rem);
+  line-height:1;
+  color:var(--tinta);
+}
+.marc-titulo{display:flex;flex-direction:column}
+.marc-subtitulo{
+  font-family:var(--inter);
+  font-size:0.8rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--acento2);
+  margin-top:0.45rem;
+}
+.marc-mail{
+  font-family:var(--inter);
+  font-size:0.75rem;
+  letter-spacing:0.03em;
+  color:var(--gris);
+  text-decoration:none;
+  margin-top:0.4rem;
+  transition:color 0.2s;
+}
+.marc-mail:hover{color:var(--acento)}
+
+.sobre-foto{
+  grid-area:foto;
+  aspect-ratio:4/5;
+  background:var(--fondo-alt);
+  border:1px solid var(--linea);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+.sobre-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.foto-placeholder{
+  font-family:var(--inter);
+  font-size:0.6rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(126,184,212,0.25);
+  text-align:center;
+  padding:0.75rem;
+}
+
+.sobre-texto{grid-area:texto;min-width:0;padding-top:0.2rem}
+.sobre-bio{
+  font-family:var(--courier);
+  font-size:1rem;
+  line-height:1.85;
+  color:var(--tinta);
+  transition:opacity 0.2s;
+  min-height:120px;
+  margin-bottom:2.2rem;
+}
+.tono-label-row{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gris-dim);
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:0.6rem;
+}
+input[type=range].slider{
+  width:100%;appearance:none;height:1px;
+  background:rgba(126,184,212,0.15);
+  border-radius:0;outline:none;cursor:pointer;border:none;
+}
+input[type=range].slider::-webkit-slider-thumb{
+  appearance:none;width:13px;height:13px;
+  background:var(--acento);border-radius:50%;cursor:pointer;border:none;
+}
+input[type=range].slider::-moz-range-thumb{
+  width:13px;height:13px;
+  background:var(--acento);border-radius:50%;cursor:pointer;border:none;
+}
+
+.cita{
+  margin-top:2.2rem;
+  padding-left:1.25rem;
+  border-left:2px solid rgba(239,170,144,0.35);
+}
+.cita blockquote{
+  font-family:var(--courier);
+  font-style:italic;
+  font-size:0.95rem;
+  line-height:1.75;
+  color:var(--sub);
+}
+.cita figcaption{
+  font-family:var(--inter);
+  font-size:0.68rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gris);
+  margin-top:0.7rem;
+}
+.cita cite{font-style:normal;color:var(--acento)}
+
+.destacado{
+  display:flex;
+  align-items:center;
+  gap:1.1rem;
+  margin-top:2rem;
+  padding:0.9rem 1.1rem;
+  background:var(--fondo-alt);
+  border:1px solid var(--linea);
+  border-left:2px solid rgba(239,170,144,0.35);
+  text-decoration:none;
+  color:inherit;
+  transition:border-color 0.2s;
+}
+.destacado:hover{border-color:rgba(239,170,144,0.35)}
+.destacado:hover .destacado-tit{color:var(--acento)}
+.destacado img{width:72px;height:72px;object-fit:cover;flex-shrink:0}
+.destacado-etiqueta{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--gris);
+  margin-bottom:0.3rem;
+}
+.destacado-tit{
+  font-family:var(--courier);
+  font-size:0.95rem;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--tinta);
+  transition:color 0.2s;
+}
+
+/* ---------- destacado + cita centrados ---------- */
+.destacados{
+  max-width:640px;
+  margin:0 auto 4.5rem;
+  text-align:center;
+}
+.destacados .destacado{margin-top:0;text-align:left}
+.destacados .cita{
+  margin-top:2.5rem;
+  padding-left:0;
+  border-left:none;
+}
+.destacados .cita::before{
+  content:'';
+  display:block;
+  width:40px;height:2px;
+  background:rgba(239,170,144,0.35);
+  margin:0 auto 1.25rem;
+}
+
+/* ---------- secciones ---------- */
+.obras-sec,
+.trayectoria-sec{scroll-margin-top:5rem}
+.trayectoria-sec{margin-top:4.5rem}
+
+.sec-label{
+  font-family:var(--inter);
+  font-size:0.72rem;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--acento);
+  margin-bottom:0.75rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.sec-label::after{
+  content:'';
+  height:1px;
+  background:rgba(239,170,144,0.12);
+  width:120px;
+}
+.sec-hint{
+  font-family:var(--inter);
+  font-size:0.72rem;
+  letter-spacing:0.03em;
+  color:var(--gris);
+  margin-bottom:2rem;
+}
+
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.1rem;
+}
+.cat-card{
+  border:1px solid var(--linea);
+  background:var(--fondo-alt);
+  align-self:start;
+}
+.cat-ancha{grid-column:1 / -1}
+
+.cat-link{
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:1.1rem 1.35rem;
+  text-decoration:none;
+  color:inherit;
+  transition:border-color 0.2s;
+}
+.cat-link:hover{border-color:rgba(239,170,144,0.35)}
+.cat-link:hover .cat-titulo{color:var(--acento)}
+.cat-titulo{transition:color 0.2s}
+.cat-logo{height:1.5rem;width:auto;display:block}
+
+.cat-header{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:1.1rem 1.35rem;
+  background:none;
+  border:none;
+  cursor:pointer;
+  text-align:left;
+}
+.cat-titulo{
+  font-family:var(--inter);
+  font-size:0.76rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--acento2);
+}
+.cat-meta{display:flex;align-items:center;gap:0.9rem}
+.cat-count{
+  font-family:var(--inter);
+  font-size:0.68rem;
+  color:var(--gris);
+  letter-spacing:0.05em;
+}
+.cat-arrow{
+  font-family:var(--inter);
+  font-size:1rem;
+  color:var(--acento);
+  transition:transform 0.25s ease;
+  line-height:1;
+}
+.cat-card.open .cat-arrow{transform:rotate(90deg)}
+
+.cat-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.35s ease;
+  padding:0 1.35rem;
+}
+.cat-card.open .cat-body{padding:0 1.35rem 1.1rem}
+
+.obra-fila{
+  display:block;
+  padding:0.9rem 0;
+  border-top:1px solid rgba(126,184,212,0.08);
+  text-decoration:none;
+  color:inherit;
+}
+.cat-body > .obra-fila:first-child,
+.cat-body > .obra-fila-static:first-child{border-top:none}
+.obra-fila:hover .obra-tit{color:var(--acento)}
+.obra-fila-static{
+  padding:0.9rem 0;
+  border-top:1px solid rgba(126,184,212,0.08);
+}
+.obra-tit{
+  font-family:var(--courier);
+  font-size:0.95rem;
+  font-weight:700;
+  color:var(--tinta);
+  margin-bottom:0.3rem;
+  line-height:1.3;
+}
+.obra-desc{
+  font-family:var(--courier);
+  font-size:0.85rem;
+  color:var(--gris);
+  line-height:1.6;
+  margin-bottom:0.4rem;
+}
+.obra-meta{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  color:var(--gris-dim);
+  letter-spacing:0.05em;
+}
+.obra-meta span+span::before{content:'  ·  '}
+
+/* ---------- trayectoria (lista compacta) ---------- */
+.tray-lista{margin-top:1.25rem}
+.tray-fila{
+  display:block;
+  padding:0.8rem 0;
+  border-top:1px solid var(--linea);
+  text-decoration:none;
+  color:inherit;
+}
+.tray-lista .tray-fila:first-child{border-top:none;padding-top:0}
+a.tray-fila:hover .obra-tit{color:var(--acento)}
+.tray-cab{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:1rem;
+  margin-bottom:0.2rem;
+}
+.tray-cab .obra-tit{margin-bottom:0}
+.tray-fila .obra-desc{margin-bottom:0;font-size:0.82rem}
+
+/* ---------- menciones (página aparte, lista compacta) ---------- */
+.menciones-lista{margin-top:0.5rem}
+.mencion{
+  display:block;
+  padding:0.85rem 0;
+  border-top:1px solid var(--linea);
+  text-decoration:none;
+  color:inherit;
+}
+.menciones-lista .mencion:first-child{border-top:none}
+.mencion-quien{
+  font-family:var(--courier);
+  font-size:0.95rem;
+  font-weight:700;
+  color:var(--tinta);
+  line-height:1.3;
+  transition:color 0.2s;
+}
+.mencion:hover .mencion-quien{color:var(--acento)}
+.mencion-ctx{
+  font-family:var(--courier);
+  font-size:0.85rem;
+  color:var(--gris);
+  line-height:1.5;
+  margin-top:0.2rem;
+}
+.mencion-fecha{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.05em;
+  color:var(--gris-dim);
+  margin-top:0.25rem;
+}
+.volver{
+  display:inline-block;
+  margin-top:2.5rem;
+  font-family:var(--inter);
+  font-size:0.72rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--gris);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.volver:hover{color:var(--acento)}
+
+/* ---------- festivales ---------- */
+.festivales-sec{margin-top:4.5rem}
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.1rem;
+}
+.galeria figure{background:var(--fondo-alt);border:1px solid var(--linea)}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.galeria figcaption{
+  font-family:var(--inter);
+  font-size:0.68rem;
+  letter-spacing:0.08em;
+  color:var(--gris);
+  line-height:1.5;
+  padding:0.7rem 0.9rem;
+}
+.galeria figcaption a{color:inherit;text-decoration:none;transition:color 0.2s}
+.galeria figcaption a:hover{color:var(--acento)}
+
+/* ---------- footer ---------- */
+footer{
+  padding:2rem 4rem;
+  border-top:1px solid var(--linea);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-copy{
+  font-family:var(--inter);
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:rgba(126,184,212,0.25);
+}
+.footer-contacto{
+  font-family:var(--inter);
+  font-size:0.75rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--acento);
+  text-decoration:none;
+  border:1px solid rgba(239,170,144,0.3);
+  padding:.7rem 1.4rem;
+  transition:.2s;
+}
+.footer-contacto:hover{
+  background:rgba(239,170,144,.08);
+  border-color:var(--acento);
+}
+
+@media(max-width:768px){
+  nav{padding:0.9rem 1.25rem}
+  .nav-links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
+  .nav-links a{font-size:0.7rem;letter-spacing:0.1em}
+  .contenido{padding:6rem 1.5rem 3rem}
+  .sobre-grid{
+    grid-template-columns:1fr;
+    grid-template-areas:"header" "foto" "texto";
+    row-gap:1.75rem;
+    justify-items:center;
+    text-align:center;
+  }
+  .marc-header{padding-bottom:0.25rem}
+  .marc-logo{height:5rem}
+  .tray-cab{flex-direction:column;gap:0.15rem}
+  .sobre-foto{width:150px}
+  .sobre-texto{text-align:left;width:100%}
+  .destacado img{width:56px;height:56px}
+  .cat-grid{grid-template-columns:1fr}
+  .galeria{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+  .galeria figure:first-child,
+  .galeria figure:last-child{grid-column:1 / -1}
+  .galeria img{aspect-ratio:1/1}
+  .galeria figure:first-child img,
+  .galeria figure:last-child img{aspect-ratio:4/3}
+  footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
+  footer > div{flex-wrap:wrap}
+}
+
+</style>
 </head>
 <body>
 
@@ -105,6 +632,11 @@
       <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
       <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
       <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
+    </div>
+  </div>
+
+  <!-- DESTACADO + CITA: centrados bajo la foto y la bio -->
+  <div class="destacados">
 
       <!-- PIEZA DESTACADA: sustituye href="#" por la URL real de la crónica -->
       <a class="destacado" href="#" target="_blank" rel="noopener noreferrer">
@@ -119,7 +651,6 @@
         <blockquote>«La desconfianza se contagia más rápido que cualquier dato. Un sistema que confía en sí mismo no pone trabas al voto, sea desde Lisboa o desde Lugo.»</blockquote>
         <figcaption>Marc Jaén, <cite>El País</cite> · Octubre 2026</figcaption>
       </figure>
-    </div>
   </div>
 
   <!-- OBRA: 35mm + Artículos, Ensayo, Audiovisual -->
@@ -139,7 +670,7 @@
 
       <div class="cat-card">
         <button class="cat-header" id="btn-articulos" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-articulos">
-          <span class="cat-titulo">Artículos</span>
+          <span class="cat-titulo">Artículos destacados</span>
           <span class="cat-meta"><span class="cat-count">7</span><span class="cat-arrow" aria-hidden="true">›</span></span>
         </button>
         <div class="cat-body" id="cat-articulos" role="region" aria-labelledby="btn-articulos" inert>
@@ -227,44 +758,35 @@
     </div>
   </div>
 
-  <!-- TRAYECTORIA: sección propia, una sola tarjeta desplegable -->
+  <!-- TRAYECTORIA: lista compacta, sin desplegable -->
   <div class="trayectoria-sec" id="trayectoria">
     <div class="sec-label">Trayectoria</div>
 
-    <div class="cat-grid">
-      <div class="cat-card cat-ancha">
-        <button class="cat-header" id="btn-trayectoria" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-trayectoria">
-          <span class="cat-titulo">Jurados, clubes y congresos</span>
-          <span class="cat-meta"><span class="cat-count">5</span><span class="cat-arrow" aria-hidden="true">›</span></span>
-        </button>
-        <div class="cat-body" id="cat-trayectoria" role="region" aria-labelledby="btn-trayectoria" inert>
-          <a class="obra-fila" href="certificado-cinema-jove.pdf" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Jurado de cortometrajes</div>
-            <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinema Jove, festival internacional de cine de València.</div>
-            <div class="obra-meta"><span>Cinema Jove</span><span>2026</span></div>
-          </a>
-          <a class="obra-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Coordinador del Biblioclub</div>
-            <div class="obra-desc">Coordinación del club de lectura de la Universitat Politècnica de València.</div>
-            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
-          </a>
-          <a class="obra-fila" href="Cineclub.pdf" target="_blank" rel="noopener noreferrer">
-            <div class="obra-tit">Coordinador del Cineclub</div>
-            <div class="obra-desc">Coordinación del club de cine de la Universitat Politècnica de València.</div>
-            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
-          </a>
-          <div class="obra-fila-static">
-            <div class="obra-tit">Jurado del Cortoons</div>
-            <div class="obra-desc">Miembro del jurado en Cortoons Gandia, el Festival Internacional de Cortometrajes de Animación de Gandia.</div>
-            <div class="obra-meta"><span>Cortoons Gandia</span><span>2025</span></div>
-          </div>
-          <div class="obra-fila-static">
-            <div class="obra-tit">Ayudante en el congreso de la SEP</div>
-            <div class="obra-desc">Apoyo en la organización del XXXII Congreso Internacional de la Sociedad Española de Periodística, celebrado en el Campus de Gandia de la UPV.</div>
-            <div class="obra-meta"><span>SEP</span><span>Mayo 2026</span></div>
-          </div>
-        </div>
+    <div class="tray-lista">
+      <div class="tray-fila">
+        <div class="tray-cab"><span class="obra-tit">Voluntario en Doclisboa</span><span class="obra-meta"><span>Octubre 2026</span></span></div>
+        <div class="obra-desc">Voluntariado en la 24ª edición de Doclisboa, Festival Internacional de Cine de Lisboa (15–25 de octubre), organizado por Apordoc.</div>
       </div>
+      <a class="tray-fila" href="certificado-cinema-jove.pdf" target="_blank" rel="noopener noreferrer">
+        <div class="tray-cab"><span class="obra-tit">Jurado de cortometrajes</span><span class="obra-meta"><span>2026</span></span></div>
+        <div class="obra-desc">41ª edición de Cinema Jove, festival internacional de cine de València.</div>
+      </a>
+      <div class="tray-fila">
+        <div class="tray-cab"><span class="obra-tit">Ayudante en el congreso de la SEP</span><span class="obra-meta"><span>Mayo 2026</span></span></div>
+        <div class="obra-desc">XXXII Congreso Internacional de la Sociedad Española de Periodística, en el Campus de Gandia de la UPV.</div>
+      </div>
+      <div class="tray-fila">
+        <div class="tray-cab"><span class="obra-tit">Jurado del Cortoons</span><span class="obra-meta"><span>2025</span></span></div>
+        <div class="obra-desc">Cortoons Gandia, Festival Internacional de Cortometrajes de Animación.</div>
+      </div>
+      <a class="tray-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
+        <div class="tray-cab"><span class="obra-tit">Coordinador del Biblioclub</span><span class="obra-meta"><span>2024—2026</span></span></div>
+        <div class="obra-desc">Club de lectura de la Universitat Politècnica de València.</div>
+      </a>
+      <a class="tray-fila" href="Cineclub.pdf" target="_blank" rel="noopener noreferrer">
+        <div class="tray-cab"><span class="obra-tit">Coordinador del Cineclub</span><span class="obra-meta"><span>2024—2026</span></span></div>
+        <div class="obra-desc">Club de cine de la Universitat Politècnica de València.</div>
+      </a>
     </div>
   </div>
 
