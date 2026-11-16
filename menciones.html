@@ -24,7 +24,7 @@
   --tinta:     #e4e9ed;
   --sub:       #a8bfd4;
   --gris:      #a3b8c9;
-  --gris-dim:  rgba(122,155,184,0.3);
+  --gris-dim:  rgba(163,184,201,0.55);
   --linea:     rgba(126,184,212,0.08);
   --courier:'Courier Prime','Courier New',monospace;
   --inter:'Inter',sans-serif;
@@ -93,7 +93,7 @@ nav{
 }
 /* nombre y logo más pequeños (antes clamp(2.5rem,5.5vw,3.7rem)) */
 .marc-logo{
-  height:6.5rem;
+  height:5.5rem;
   width:auto;
   display:block;
 }
@@ -493,7 +493,7 @@ footer{
   font-size:0.65rem;
   letter-spacing:0.15em;
   text-transform:uppercase;
-  color:rgba(126,184,212,0.25);
+  color:rgba(163,184,201,0.5);
 }
 .footer-contacto{
   font-family:var(--inter);
@@ -524,7 +524,7 @@ footer{
     text-align:center;
   }
   .marc-header{padding-bottom:0.25rem}
-  .marc-logo{height:5rem}
+  .marc-logo{height:4.2rem}
   .tray-cab{flex-direction:column;gap:0.15rem}
   .sobre-foto{width:150px}
   .sobre-texto{text-align:left;width:100%}
@@ -538,6 +538,23 @@ footer{
   .galeria figure:last-child img{aspect-ratio:4/3}
   footer{padding:2rem 1.5rem;flex-direction:column;gap:1rem;align-items:flex-start}
   footer > div{flex-wrap:wrap}
+}
+
+
+/* =========================================================
+   AJUSTES SOBRIOS (solo legibilidad y accesibilidad)
+   ========================================================= */
+::selection{background:rgba(239,170,144,0.3);color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--acento);
+  outline-offset:3px;
+}
+.sobre-texto{max-width:640px}
+.sec-label{font-size:0.76rem}
+.cat-titulo{color:#b7c6d1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }
 
 </style>
