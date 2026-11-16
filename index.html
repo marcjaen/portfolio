@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Marc Jaén | Periodista cultural</title>
+<meta name="description" content="Marc Jaén Domínguez, periodista cultural. Redactor en la revista 35mm. Ensayo, artículos, crónica y guion. Publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia. Coordinador del Biblioclub y el Cineclub de la UPV.">
+<meta name="author" content="Marc Jaén Domínguez">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#12132e">
+<link rel="canonical" href="https://marcjaen.es/">
+<link rel="icon" type="image/png" href="/logomarc.png">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marc Jaén">
+<meta property="og:title" content="Marc Jaén | Periodista cultural">
+<meta property="og:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Es redactor en la revista 35mm y ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.">
+<meta property="og:url" content="https://marcjaen.es/">
+<meta property="og:image" content="https://marcjaen.es/logomarc.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Marc Jaén | Periodista cultural">
+<meta name="twitter:description" content="Marc Jaén Domínguez escribe ensayo, periodismo cultural, ficción y guion. Redactor en la revista 35mm. Ha publicado en El País, Indyrock, Letralia, Revista Icónica y Som Gandia.">
+<meta name="twitter:image" content="https://marcjaen.es/logomarc.png">
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://marcjaen.es/#website",
+      "url": "https://marcjaen.es/",
+      "name": "Marc Jaén",
+      "alternateName": "Marc Jaén Domínguez",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://marcjaen.es/#person",
+      "name": "Marc Jaén",
+      "alternateName": ["Marc Jaén Domínguez", "Marc Jaen"],
+      "url": "https://marcjaen.es/",
+      "image": "https://marcjaen.es/foto.jpg",
+      "email": "mailto:marcjaen@marcjaen.es",
+      "jobTitle": "Periodista cultural",
+      "description": "Periodista cultural, ensayista y guionista. Redactor en la revista 35mm. Coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+      "knowsAbout": ["periodismo cultural", "ensayo", "cine", "literatura", "música", "guion"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "35mm",
+        "url": "https://35milimetros.es/"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universitat Politècnica de València"
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#obras">Obra</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="menciones.html">Menciones</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main class="contenido">
+
+  <div class="sobre-grid" id="sobre-mi">
+    <div class="marc-header">
+      <img src="logomarcblanco.png" alt="Logo Marc Jaén" class="marc-logo">
+
+      <div class="marc-titulo">
+        <h1 class="marc-nombre">Marc Jaén</h1>
+        <p class="marc-subtitulo">Periodista cultural</p>
+        <a href="mailto:marcjaen@marcjaen.es" class="marc-mail">marcjaen@marcjaen.es</a>
+        <a href="cv-marc-jaen.pdf" target="_blank" rel="noopener noreferrer" class="marc-mail">Descargar CV ↓</a>
+      </div>
+    </div>
+
+    <div class="sobre-foto">
+      <img src="foto.jpg" alt="Marc Jaén Domínguez, periodista cultural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="foto-placeholder" style="display:none">.</div>
+    </div>
+
+    <div class="sobre-texto">
+      <div class="sobre-bio" id="bioTexto">Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.</div>
+      <label for="tonoSlider" class="sr-only">Ajustar el tono de la biografía, de minimalista a maximalista</label>
+      <div class="tono-label-row"><span>Minimalista</span><span>Maximalista</span></div>
+      <input type="range" class="slider" id="tonoSlider" min="0" max="6" step="1" value="3">
+
+      <!-- PIEZA DESTACADA: sustituye href="#" por la URL real de la crónica -->
+      <a class="destacado" href="#" target="_blank" rel="noopener noreferrer">
+        <img src="cronenberg-poster.jpg" alt="Póster de Videodrome firmado por David Cronenberg" onerror="this.style.display='none'">
+        <div>
+          <div class="destacado-etiqueta">Crónica · LEFFEST 2026 · 35mm</div>
+          <div class="destacado-tit">Cara a cara con Cronenberg y Dafoe: crónica del LEFFEST 2026</div>
+        </div>
+      </a>
+
+      <figure class="cita">
+        <blockquote>«La desconfianza se contagia más rápido que cualquier dato. Un sistema que confía en sí mismo no pone trabas al voto, sea desde Lisboa o desde Lugo.»</blockquote>
+        <figcaption>Marc Jaén, <cite>El País</cite> · Octubre 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- OBRA: 35mm + Artículos, Ensayo, Audiovisual -->
+  <div class="obras-sec" id="obras">
+    <div class="sec-label">Obra</div>
+    <div class="sec-hint">Pincha sobre una categoría para ver las publicaciones.</div>
+
+    <div class="cat-grid">
+
+      <a class="cat-card cat-link" href="https://35milimetros.es/author/marcjaen/" target="_blank" rel="noopener noreferrer">
+        <span class="cat-titulo">35mm</span>
+        <span class="cat-meta">
+          <span class="cat-count">Redactor</span>
+          <img src="logo-35mm.png" alt="Logo de la revista 35mm" class="cat-logo">
+        </span>
+      </a>
+
+      <div class="cat-card">
+        <button class="cat-header" id="btn-articulos" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-articulos">
+          <span class="cat-titulo">Artículos</span>
+          <span class="cat-meta"><span class="cat-count">7</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+        </button>
+        <div class="cat-body" id="cat-articulos" role="region" aria-labelledby="btn-articulos" inert>
+          <a class="obra-fila" href="https://www.elsaltodiario.com/musica/vicent-ballester-cuando-un-nino-no-tiene-una-ensenanza-musical-se-le-corta-posibilidad-ser-feliz" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Vicent Ballester: «Cuando un niño no tiene una enseñanza musical, se le corta la posibilidad de ser más feliz»</div>
+            <div class="obra-desc">Entrevista al guitarrista y cofundador del Conservatori Tenor Cortis de Dénia sobre la enseñanza musical, el estado del centro y el lugar de las artes en la escuela.</div>
+            <div class="obra-meta"><span>El Salto</span><span>Noviembre 2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://elpais.com/opinion/2026-10-15/una-lectora-el-problema-no-es-el-turismo-sino-desplazar-la-vida-que-hace-atractiva-una-ciudad.html" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">No siembren la duda</div>
+            <div class="obra-desc">Carta al director sobre el voto en el extranjero, publicada en la sección de Opinión de El País.</div>
+            <div class="obra-meta"><span>El País</span><span>Octubre 2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Deambular en el interior del mito</div>
+            <div class="obra-desc">Crónica y fotografías propias sobre el Festival Internacional de Benicàssim 2026.</div>
+            <div class="obra-meta"><span>Indyrock</span><span>2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://35milimetros.es/doclisboa-2026-reportaje-y-criticas/" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Doclisboa 2026: reportaje y críticas</div>
+            <div class="obra-desc">Reportaje y críticas de la 24ª edición de Doclisboa, festival de cine documental de Lisboa.</div>
+            <div class="obra-meta"><span>35mm</span><span>Octubre 2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://35milimetros.es/festa-do-cinema-frances-2026-criticas/" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Festa do Cinema Francês 2026: Críticas</div>
+            <div class="obra-desc">Reportaje de la 27ª edición de la Festa do Cinema Francês de Lisboa.</div>
+            <div class="obra-meta"><span>35mm</span><span>Octubre 2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://somgandia.com/frikidays-gandia-2026-marc-jaen" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Un día en Frikidays Gandia 2026</div>
+            <div class="obra-desc">Artículo del salón de cómic en Gandia.</div>
+            <div class="obra-meta"><span>Som Gandia</span><span>2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://somgandia.com/visoren-fest-de-gandia" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Concluye la Novena edición del Visoren Fest de Gandia</div>
+            <div class="obra-desc">Artículo del festival de música de Gandia.</div>
+            <div class="obra-meta"><span>Som Gandia</span><span>2023</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <button class="cat-header" id="btn-ensayo" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-ensayo">
+          <span class="cat-titulo">Ensayo</span>
+          <span class="cat-meta"><span class="cat-count">2</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+        </button>
+        <div class="cat-body" id="cat-ensayo" role="region" aria-labelledby="btn-ensayo" inert>
+          <a class="obra-fila" href="https://letralia.com/sala-de-ensayo/2026/06/15/estupidez-natural-asistida/" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Estupidez natural asistida</div>
+            <div class="obra-desc">Sobre la irrupción de la inteligencia artificial en la sociedad actual.</div>
+            <div class="obra-meta"><span>Letralia</span><span>Junio 2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://revistaiconica.com/apuntes-sobre-el-horror-de-tener-un-cuerpo-que-no-deben-tomarse-tan-en-serio/" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Apuntes sobre el horror de tener un cuerpo que no deben tomarse tan en serio</div>
+            <div class="obra-desc">Sobre el body horror en el cine y lo que dice de nuestra relación con el cuerpo.</div>
+            <div class="obra-meta"><span>Revista Icónica</span><span>Junio 2026</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <button class="cat-header" id="btn-audiovisual" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-audiovisual">
+          <span class="cat-titulo">Audiovisual</span>
+          <span class="cat-meta"><span class="cat-count">3</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+        </button>
+        <div class="cat-body" id="cat-audiovisual" role="region" aria-labelledby="btn-audiovisual" inert>
+          <a class="obra-fila" href="https://youtu.be/EeJYTK-AFF4" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Punto Ciego</div>
+            <div class="obra-desc">Ayudante de dirección del cortometraje, proyectado en enero de 2026.</div>
+            <div class="obra-meta"><span>Cortometraje</span><span>2026</span></div>
+          </a>
+          <a class="obra-fila" href="https://youtu.be/1i9xn49E3Xo" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Ruido</div>
+            <div class="obra-desc">Guionista en el micrometraje, presentado a un festival de micrometrajes sobre la paz.</div>
+            <div class="obra-meta"><span>Micrometraje</span><span>2025</span></div>
+          </a>
+          <a class="obra-fila" href="https://youtu.be/iUqpj9CgzKc" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">El secuestrador secuestrado</div>
+            <div class="obra-desc">Guionista en el cortometraje.</div>
+            <div class="obra-meta"><span>Cortometraje</span><span>2024</span></div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TRAYECTORIA: sección propia, una sola tarjeta desplegable -->
+  <div class="trayectoria-sec" id="trayectoria">
+    <div class="sec-label">Trayectoria</div>
+
+    <div class="cat-grid">
+      <div class="cat-card cat-ancha">
+        <button class="cat-header" id="btn-trayectoria" onclick="toggleCat(this)" aria-expanded="false" aria-controls="cat-trayectoria">
+          <span class="cat-titulo">Jurados, clubes y congresos</span>
+          <span class="cat-meta"><span class="cat-count">5</span><span class="cat-arrow" aria-hidden="true">›</span></span>
+        </button>
+        <div class="cat-body" id="cat-trayectoria" role="region" aria-labelledby="btn-trayectoria" inert>
+          <a class="obra-fila" href="certificado-cinema-jove.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Jurado de cortometrajes</div>
+            <div class="obra-desc">Miembro del jurado en la sección de cortometrajes de la 41ª edición de Cinema Jove, festival internacional de cine de València.</div>
+            <div class="obra-meta"><span>Cinema Jove</span><span>2026</span></div>
+          </a>
+          <a class="obra-fila" href="Biblioclub.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Coordinador del Biblioclub</div>
+            <div class="obra-desc">Coordinación del club de lectura de la Universitat Politècnica de València.</div>
+            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
+          </a>
+          <a class="obra-fila" href="Cineclub.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="obra-tit">Coordinador del Cineclub</div>
+            <div class="obra-desc">Coordinación del club de cine de la Universitat Politècnica de València.</div>
+            <div class="obra-meta"><span>UPV</span><span>2024—2026</span></div>
+          </a>
+          <div class="obra-fila-static">
+            <div class="obra-tit">Jurado del Cortoons</div>
+            <div class="obra-desc">Miembro del jurado en Cortoons Gandia, el Festival Internacional de Cortometrajes de Animación de Gandia.</div>
+            <div class="obra-meta"><span>Cortoons Gandia</span><span>2025</span></div>
+          </div>
+          <div class="obra-fila-static">
+            <div class="obra-tit">Ayudante en el congreso de la SEP</div>
+            <div class="obra-desc">Apoyo en la organización del XXXII Congreso Internacional de la Sociedad Española de Periodística, celebrado en el Campus de Gandia de la UPV.</div>
+            <div class="obra-meta"><span>SEP</span><span>Mayo 2026</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FESTIVALES -->
+  <div class="festivales-sec" id="festivales">
+    <div class="sec-label">Festivales</div>
+    <div class="sec-hint">Fotografías propias de las coberturas.</div>
+
+    <div class="galeria">
+      <figure>
+        <img src="leffest-cronenberg.jpg" alt="David Cronenberg en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · David Cronenberg</figcaption>
+      </figure>
+      <figure>
+        <img src="leffest-dafoe.jpg" alt="Willem Dafoe en el LEFFEST 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>LEFFEST 2026 · Willem Dafoe</figcaption>
+      </figure>
+      <figure>
+        <img src="doclisboa.jpg" alt="Entrevista a Margarida Gil en Doclisboa 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://35milimetros.es/doclisboa-2026-reportaje-y-criticas/" target="_blank" rel="noopener noreferrer">Doclisboa 2026 · Entrevista a Margarida Gil</a></figcaption>
+      </figure>
+      <figure>
+        <img src="festa-cinema-frances.jpg" alt="Festa do Cinema Francês 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://35milimetros.es/festa-do-cinema-frances-2026-criticas/" target="_blank" rel="noopener noreferrer">Festa do Cinema Francês 2026 · Cobertura</a></figcaption>
+      </figure>
+      <figure>
+        <img src="fib-fratellis.jpg" alt="The Fratellis en el Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · The Fratellis</a></figcaption>
+      </figure>
+      <figure>
+        <img src="fib-ambiente.jpg" alt="Ambiente del Festival Internacional de Benicàssim 2026, fotografía de Marc Jaén" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption><a href="https://indyrock.es/benicassim.htm" target="_blank" rel="noopener noreferrer">FIB 2026 · Ambiente</a></figcaption>
+      </figure>
+    </div>
+  </div>
+
+</main>
+
+<footer id="contacto">
+  <span class="footer-copy">© Marc Jaén Domínguez</span>
+
+  <div style="display:flex;gap:1rem;">
+    <a href="cv-marc-jaen.pdf" target="_blank" rel="noopener noreferrer" class="footer-contacto">Descargar CV</a>
+    <a href="mailto:marcjaen@marcjaen.es" class="footer-contacto">Contacta</a>
+  </div>
+</footer>
+
+<script>
+const bios = [
+  "Escribe.",
+  "Escribe ficción, ensayo y periodismo.",
+  "Escribe ficción, ensayo, periodismo y guion. Le interesa la cultura pop en todas sus formas. Es redactor en la revista 35mm y suele consumir cine, música y literatura como parte de su día a día.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion, con especial interés en la cultura pop en todas sus formas. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. También ha participado en varios cortometrajes como guionista y ayudante de dirección, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando sirven para entender algo sobre las personas, y sobre todo cuando la cultura pop les da una identidad mayor. Actualmente es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. Ha participado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València.",
+  "Marc Jaén nació en 2005 y reside en Valencia. Escribe ficción, ensayo, periodismo y guion desde un ángulo que combina criterio técnico musical (formación de conservatorio) con una lectura social de la cultura pop. Le interesan el cine, la literatura y la música cuando dejan de ser un tema y se convierten en una excusa para hablar de la identidad y de lo que la cultura pop revela sobre las personas. Actualmente es redactor en la revista 35mm y ha publicado en El País (sección de Opinión), Indyrock, Letralia, Revista Icónica y Som Gandia. Ha trabajado en varios cortometrajes, ha formado parte del jurado de Cinema Jove y coordina el Biblioclub y el Cineclub de la Universitat Politècnica de València."
+];
+
+const slider = document.getElementById('tonoSlider');
+const bio    = document.getElementById('bioTexto');
+let bioTimer = null;
+
+function update(v){
+  bio.style.opacity = '0';
+  clearTimeout(bioTimer);
+  bioTimer = setTimeout(() => {
+    bio.textContent = bios[v];
+    bio.style.opacity = '1';
+  }, 180);
+}
+slider.addEventListener('input', e => update(parseInt(e.target.value)));
+update(3);
+
+// acordeón: altura calculada según el contenido real
+function toggleCat(header){
+  const card = header.closest('.cat-card');
+  const body = card.querySelector('.cat-body');
+
+  if(card.classList.contains('open')){
+    header.setAttribute('aria-expanded', 'false');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      card.classList.remove('open');
+      body.style.maxHeight = '0px';
+    });
+    setTimeout(() => {
+      if(!card.classList.contains('open')) body.inert = true;
+    }, 360);
+  } else {
+    header.setAttribute('aria-expanded', 'true');
+    body.inert = false;
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+</script>
+</body>
+</html>
